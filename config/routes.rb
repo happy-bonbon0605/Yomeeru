@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#callback'
   get '/signout' => 'sessions#destroy'
+
+  get 'votes/select' => 'votes#select'
+  post 'votes/message' => 'votes#message'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -53,6 +56,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get 'votes/select' => 'votes#select'
-  post 'votes/message' => 'votes#message'
 end
