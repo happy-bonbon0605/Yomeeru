@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'votes' => 'votes#index'
   get 'votes/select' => 'votes#select'
   post 'votes/message' => 'votes#message'
+  post 'votes/vote' => 'votes#vote'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -11,6 +11,8 @@ class VotesController < ApplicationController
 
   # message for wife
   def message
+    @vote = Vote.new
+    @vote.voted_user_id = params[:vote][:voted_user_id]
   end
 
   # create vote and message
