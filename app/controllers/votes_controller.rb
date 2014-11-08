@@ -9,7 +9,7 @@ class VotesController < ApplicationController
   end
 
   def message
-    @vote = Vote.new(votde_user_id_params)
+    @vote = Vote.new(voted_user_id_params)
   end
 
   def vote
@@ -27,7 +27,7 @@ class VotesController < ApplicationController
     params.require(:vote).permit(:voted_user_id, :message)
   end
 
-  def votde_user_id_params
+  def voted_user_id_params
     params.require(:vote).permit(:voted_user_id)
   end
 end
