@@ -1,0 +1,8 @@
+- model_class = Vote
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
+  - @candidates.each do |candidate|
+    ul
+      li= candidate.uid
+      li= candidate.nickname
+      li= candidate.image_url
