@@ -3,18 +3,15 @@ class VotesController < ApplicationController
   def index
   end
 
-  # vote
   def select
     @vote = Vote.new
     @candidates = Candidate.all
   end
 
-  # message for wife
   def message
     @vote = Vote.new(votde_user_id_params)
   end
 
-  # create vote and message
   def vote
     @vote = Vote.new(vote_params)
     @vote.voting_user_id = current_user.id
