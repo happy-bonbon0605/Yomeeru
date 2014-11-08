@@ -20,4 +20,4 @@ contributors.each do |contributor|
     image_url: author['avatar_url'])
 end
 
-Candidate.create(nickname: 'Yui Ogasawara', uid: '0', image_url: 'http://sample.com')
+Candidate.create(nickname: 'Yu Ogasawara', uid: '0', image_url: 'http://sample.com')
