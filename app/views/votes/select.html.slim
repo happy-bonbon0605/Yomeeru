@@ -1,0 +1,11 @@
+- model_class = Vote
+.page-header
+  h1=t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
+
+  = form_for @vote, url: {action: 'message'} do |f|
+    - @candidates.each do |candidate|
+      p
+        = f.radio_button :voted_user_id, "#{candidate.uid}"
+        = f.label "voted_user_id_#{candidate.uid}", "#{candidate.nickname}"
+
+    = f.submit 'Submit'
