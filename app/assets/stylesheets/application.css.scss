@@ -14,13 +14,13 @@
  *= require_self
  */
 // First import spacelab variables
-@import "bootswatch/yeti/variables";
+@import "bootswatch/lumen/variables";
 
 // Then bootstrap itself
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/yeti/bootswatch";
+@import "bootswatch/lumen/bootswatch";
 
 // font-awesome gem
 @import "font-awesome";
