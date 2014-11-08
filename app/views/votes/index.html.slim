@@ -1,6 +1,6 @@
 - model_class = Vote
-div class="page-header"
-  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+.page-header
+  h1=t '.title', default: model_class.model_name.human.pluralize.titleize
 
-= link_to t('.new', :default => t("helpers.links.new")), new_vote_path, :class => 'btn btn-primary'
+= link_to t('.new', default: t("helpers.links.new")), votes_select_path, class: 'btn btn-primary'
 

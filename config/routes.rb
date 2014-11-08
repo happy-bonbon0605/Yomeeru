@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#callback'
   get '/signout' => 'sessions#destroy'
 
+  get 'votes' => 'votes#index'
   get 'votes/select' => 'votes#select'
   post 'votes/message' => 'votes#message'
   # Example of regular route:
