@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108082729) do
+ActiveRecord::Schema.define(version: 20141108092309) do
 
   create_table "candidates", force: true do |t|
     t.string   "uid"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20141108082729) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "voting_user_id"
+    t.integer  "voted_user_id"
+    t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
