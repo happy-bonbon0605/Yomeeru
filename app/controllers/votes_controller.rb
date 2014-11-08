@@ -18,7 +18,7 @@ class VotesController < ApplicationController
     if @vote.save
       redirect_to :root, notice: '妻へ捧げる愛のメッセージをありがとうございました。'
     else
-      render :selct, alert: "妻への愛が足りません。やり直しです。"
+      render :select, alert: "妻への愛が足りません。やり直しです。"
     end
   end
 
