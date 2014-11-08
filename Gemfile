@@ -11,9 +11,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'slim-rails'
-gem 'twitter-bootstrap3-rails'
 gem 'omniauth-github'
 gem 'zocial-rails'
+
+# User bootswatch
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
+gem 'bootswatch-rails'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'sdoc', require: false
