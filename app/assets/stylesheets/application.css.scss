@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+// First import spacelab variables
+@import "bootswatch/yeti/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// And finally bootswatch style itself
+@import "bootswatch/yeti/bootswatch";
+
+// font-awesome gem
+@import "font-awesome";
