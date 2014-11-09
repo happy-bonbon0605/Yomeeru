@@ -4,6 +4,6 @@
   = @vote.message
 
 #congratulaitons-block
-  - @congratulations.each do |cong|
+  - @congratulations.shuffle.each do |cong|
     li.congratulation-comment
       = "#{cong['comment']} from #{cong['name']}"
