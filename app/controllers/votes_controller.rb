@@ -5,13 +5,11 @@ class VotesController < ApplicationController
 
     begin
       yaml_data = YAML.load_file(config_file_path)
+      @congratulations = yaml_data['congratulations']
     rescue
-      # Configファイルが不正な構文 => 終了する
-      logger.error 'congratulations.yml is invalid'
-      exit
+      logger.error 'yaml読み込みがうまくいかないのでちょっと確認してみてね'
+      render text: 'Herokuを動かすには愛が足りません。奥様に「愛してる」と言ってください。'
     end
-
-    @congratulations = yaml_data['congratulations']
 
     @vote = Vote.last
   end
