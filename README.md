@@ -15,7 +15,7 @@ Yomeeruのログイン機能はGithub APIのOauthを利用するため、[こち
 * Homepage URL
   * http://localhost:3000
 * Description
-  * ruby kaja投票アプリ
+  * happy wedding for ogasawara-san
 * Authorization callback URL
   * http://localhost:3000/auth/github/callback
 
