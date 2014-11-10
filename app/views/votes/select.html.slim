@@ -1,11 +1,29 @@
 - model_class = Vote
 .page-header
+  / OPTIMIZE
+  sass:
+    .select-label
+      padding: 15px
+    .btn-group-vertical
+      display: block
+    .btn.text-left
+      text-align: left
+      padding-top: 5
+      padding-botton: 5
+    span.profile-image
+      padding: 1px
+    span.profile-name
+      vertical-align: middle
+      font-size: 24px
+      padding: 5px
   h1=t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
-
-  = form_for @vote, url: {action: 'message'} do |f|
-    - @candidates.each do |candidate|
-      p
-        = f.radio_button :voted_user_id, "#{candidate.uid}"
-        = f.label "voted_user_id_#{candidate.uid}", "#{candidate.nickname}"
-
-    = f.submit 'Submit'
+  .select-label
+    = "選択してね"
+  .btn-group-vertical.col-md-5
+    = form_for @vote, url: {action: 'message'} do |f|
+      - @candidates.each do |candidate|
+        = button_tag type: "submit", class: "btn btn-default btn-lg btn-block text-left", value: "#{candidate.id}", form: "new_vote", name:"voted_user_id"
+          span.col-md-2.profile-image
+            = image_tag candidate.image_url, size: '24x24', class: 'img-circle'
+          span.col-md-2.profile-name.font-size-large
+            = "\s#{candidate.nickname}"
