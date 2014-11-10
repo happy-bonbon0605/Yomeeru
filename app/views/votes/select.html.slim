@@ -16,9 +16,9 @@
       vertical-align: middle
       font-size: 24px
       padding: 5px
-  h1=t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
+  h1=t '.title', default: [:'helpers.titles.new', 'Dear.'], model: model_class.model_name.human.titleize
   .select-label
-    = "選択してね"
+    = "一番好きなの誰ですか？"
   .btn-group-vertical.col-md-5
     = form_for @vote, url: {action: 'message'} do |f|
       - @candidates.each do |candidate|
