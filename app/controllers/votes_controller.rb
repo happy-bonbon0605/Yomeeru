@@ -6,7 +6,7 @@ class VotesController < ApplicationController
   # vote
   def select
     @vote = Vote.new
-    @candidates = Candidate.all
+    @candidates = Candidate.where.not(uid: '0').shuffle[0..4] << Candidate.find_by(uid: '0')
   end
 
   # message for wife
