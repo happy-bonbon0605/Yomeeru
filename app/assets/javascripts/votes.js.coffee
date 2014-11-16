@@ -8,17 +8,18 @@
 
 # select.html.slimに呼び出し処理を追加する after merge #13
 @redirectMessagePage = () ->
-  # TODO ラジオボタンではなくなっているからデータの取得方法を変更する
-  votedUserId = $('button[name="voted_user_id"]:checked').val()
-  unless isWife(votedUserId)
+  votedUserUID = $('button[name="voted_user_id"]:checked').attr('id').replace(/voted_user_/g,'')
+  unless isWife(votedUserUID)
     alert(@error_messages[@count])
     window.open(@redirect_urls[@count])
     @count += 1
-    # 奥さん選択可能にする if @count > 2
     if @count > 2
-      $('button#voted_user_0').removeAttr('disabled')
+      $('button[name="voted_user_id"]').each ->
+        if $(this).attr('id') == 'button#voted_user_0'
+          $(this).removeAttr('disabled')
+        else
+          $(this).hide()
     event.preventDefault()
-    return
 
-isWife = (votedUserId) ->
-  if votedUserId == '0' then true else false
+isWife = (votedUserUID) ->
+  if votedUserUID == '0' then true else false
