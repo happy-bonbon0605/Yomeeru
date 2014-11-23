@@ -1,7 +1,7 @@
 - model_class = Vote
 
 #message
-  = @vote.message
+  = @vote.message if @vote != nil
 
 #congratulaitons-block
   - @congratulations.shuffle.each do |cong|
