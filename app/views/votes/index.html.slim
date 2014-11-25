@@ -1,6 +1,9 @@
 - model_class = Vote
-.page-header
-  h1=t '.title', default: model_class.model_name.human.pluralize.titleize
 
-= link_to t('.new', default: t("helpers.links.new")), votes_select_path, class: 'btn btn-primary'
+#message
+  = "#{@vote.message} to Yu from you." if @vote != nil 
 
+ul#congratulaitons-block
+  - @congratulations.shuffle.each do |cong|
+    li.congratulation-comment
+      = "#{cong['comment']} from #{cong['name']}"
