@@ -3,7 +3,7 @@
 #message
   = @vote.message if @vote != nil
 
-#congratulaitons-block
+ul#congratulaitons-block
   - @congratulations.shuffle.each do |cong|
     li.congratulation-comment
       = "#{cong['comment']} from #{cong['name']}"
