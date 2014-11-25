@@ -1,11 +1,34 @@
 - model_class = Vote
 .page-header
-  h1=t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
-
-  = form_for @vote, url: {action: 'message'} do |f|
-    - @candidates.each do |candidate|
-      p
-        = f.radio_button :voted_user_id, "#{candidate.id}"
-        = f.label "voted_user_id_#{candidate.id}", "#{candidate.nickname}"
-
-    = f.submit 'Submit'
+  / OPTIMIZE
+  sass:
+    .select-label
+      padding: 15px
+    .btn-group-vertical
+      display: block
+    .btn.text-left
+      text-align: left
+      padding-top: 5
+      padding-botton: 5
+    span.profile-image
+      padding: 1px
+    span.profile-name
+      vertical-align: middle
+      font-size: 24px
+      padding: 5px
+  h1=t '.title', default: [:'helpers.titles.new', 'Dear.'], model: model_class.model_name.human.titleize
+  .select-label
+    = '一番好きなの誰ですか？'
+  .btn-group-vertical.col-md-5
+    = form_for @vote, url: {action: 'message'} do |f|
+      - @candidates.each do |candidate|
+        = f.button type: 'submit',
+          id: "voted_user_#{candidate.uid}",
+          class: "btn #{candidate.button_type} btn-lg btn-block text-left",
+          value: "#{candidate.id}",
+          name:'voted_user_id',
+          disabled: candidate.button_disable?
+            span.col-md-2.profile-image
+              = image_tag candidate.image_url, size: '24x24', class: 'img-circle'
+            span.col-md-2.profile-name.font-size-large
+              = "\s#{candidate.nickname}"
