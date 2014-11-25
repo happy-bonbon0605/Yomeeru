@@ -2,6 +2,7 @@
 
 #message
   = @vote.message if @vote != nil
+  | to Yu from you.
 
 ul#congratulaitons-block
   - @congratulations.shuffle.each do |cong|
