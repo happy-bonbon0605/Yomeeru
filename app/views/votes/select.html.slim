@@ -26,7 +26,7 @@
           id: "voted_user_#{candidate.uid}",
           class: "btn #{candidate.button_type} btn-lg btn-block text-left",
           value: "#{candidate.id}",
-          name:'voted_user_id',
+          name:'vote[voted_user_id]',
           disabled: candidate.button_disable?
             span.col-md-2.profile-image
               = image_tag candidate.image_url, size: '24x24', class: 'img-circle'
