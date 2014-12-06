@@ -57,9 +57,9 @@ else
 end
 ```
 
-uidはGitHubから取得できる値です。自分のuidを `config/application.yml' に設定することで、投票画面に移動できます。
+uidはGitHubから取得できる値です。自分のuidを `config/application.yml` に設定することで、投票画面に移動できます。
 
-```ruby
+```yml
 defaults: &defaults
   # 小笠原さんの uid は '2714316' ですが、これを自分の uid に書き換えることで、投票画面に移動できるようになります。
 　# たとえば yucao24hours の uid は '1979779' なので、以下のようにします。
