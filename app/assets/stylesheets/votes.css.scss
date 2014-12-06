@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
 
 body {
 	background-color: #F9F2EC;
@@ -12,17 +12,23 @@ body {
 	}
 
 	h1 {
+		font-family: 'Dancing Script';
 		font-size: 6em;
+		color: #6F5245;
+		text-shadow: 1px 1px 3px #fff;
 	}
 
 	.top_wrapper	{
+		width: 60%;
+		margin: 0 auto;
 		background-size: contain;
 		background-image: url(cute_wedding_invitation.png);
 		background-repeat: no-repeat;
 		background-position: bottom right;
 		#login-button {
+			margin-top: 4em;
 			.zocial.github {
-				background-color: #DB9A88;
+				background-color: #B0362D;
 				box-shadow: none;
 				text-shadow: none;
 				border: none;
@@ -36,6 +42,13 @@ body {
 					box-shadow: none;
 				}
 			}
+		}
+	}
+
+	footer {
+		padding-top: 2em;
+		p {
+			text-align: center;
 		}
 	}
 }
