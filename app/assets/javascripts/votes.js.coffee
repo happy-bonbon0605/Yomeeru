@@ -7,15 +7,15 @@
 @redirect_urls  = ['http://google.com', 'http://www.yahoo.co.jp/','http://yochiyochirb.doorkeeper.jp/']
 
 # select.html.slimに呼び出し処理を追加する after merge #13
-@redirectMessagePage = () ->
-  votedUserUID = $('button[name="voted_user_id"]:checked').attr('id').replace(/voted_user_/g,'')
+@redirectOtherPage = () ->
+  votedUserUID = $(event.currentTarget).attr('id').replace(/voted_user_/g,'')
   unless isWife(votedUserUID)
     alert(@error_messages[@count])
     window.open(@redirect_urls[@count])
     @count += 1
     if @count > 2
-      $('button[name="voted_user_id"]').each ->
-        if $(this).attr('id') == 'button#voted_user_0'
+      $('button[name="vote[voted_user_id]"]').each ->
+        if $(this).attr('id') == 'voted_user_0'
           $(this).removeAttr('disabled')
         else
           $(this).hide()
