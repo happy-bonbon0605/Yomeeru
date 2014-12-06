@@ -38,3 +38,19 @@ export GITHUB_SECRET="XXXXXXXXXXXXX" # Yomeeru用のClient Secretを設定
 
 bundle exec rails server
 ```
+
+# 補足
+
+## 投票機能を利用したい場合
+
+以下でログイン後の画面遷移制御を`sessions_controller.rb`おこなっています。  
+
+```rb
+    if user.uid == '2714316'  
+      redirect_to votes_select_path
+    else
+      redirect_to votes_path
+    end
+```
+
+uidはGitHubから取得できる値です。自分のuidを設定することで、投票画面に移動できます。  
