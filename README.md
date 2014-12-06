@@ -30,11 +30,15 @@ bundle install --path vendor/bundle
 bundle exec rake db:create
 bundle exec rake db:migrate
 
+cp config/application.yml.sample config/application.yml # 必要に応じて環境変数をセット
+
 bundle exec rails runner lib/batch/insert_to_members_from_github_contributors.rb
 
 # ex) bash,zsh
 export GITHUB_KEY="XXXXXXXXX"         # Yomeeru用のClient IDを設定
 export GITHUB_SECRET="XXXXXXXXXXXXX" # Yomeeru用のClient Secretを設定
+
+# 必要に応じて、Settingslogic で設定している uid を自分のものに変える（次項参照）
 
 bundle exec rails server
 ```
@@ -43,14 +47,21 @@ bundle exec rails server
 
 ## 投票機能を利用したい場合
 
-以下でログイン後の画面遷移制御を`sessions_controller.rb`おこなっています。  
+以下でログイン後の画面遷移制御を`sessions_controller.rb`でおこなっています。
 
 ```rb
-    if user.uid == '2714316'  
-      redirect_to votes_select_path
-    else
-      redirect_to votes_path
-    end
+if user.uid == Settings.bonbon_uid
+  redirect_to votes_select_path
+else
+  redirect_to votes_path
+end
 ```
 
-uidはGitHubから取得できる値です。自分のuidを設定することで、投票画面に移動できます。  
+uidはGitHubから取得できる値です。自分のuidを `config/application.yml' に設定することで、投票画面に移動できます。
+
+```ruby
+defaults: &defaults
+  # 小笠原さんの uid は '2714316' ですが、これを自分の uid に書き換えることで、投票画面に移動できるようになります。
+　# たとえば yucao24hours の uid は '1979779' なので、以下のようにします。
+  bonbon_uid: '1979779'
+```

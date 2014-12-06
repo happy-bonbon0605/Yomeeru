@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  before_action :redirect_to_votes_if_already_voted, only: %i(select)
+
   # yochiyochi message
   def index
     config_file_path = './lib/congratulations.yml'
@@ -40,5 +42,14 @@ class VotesController < ApplicationController
 
   def voted_user_id_params
     params.require(:vote).permit(:voted_user_id)
+  end
+
+  def redirect_to_votes_if_already_voted
+    if current_user.uid == Settings.bonbon_uid
+      #XXX 現時点の仕様だと、同一 User が複数回投票できてしまう
+      if Vote.find_by(voting_user_id: current_user.id).present?
+        redirect_to votes_path
+      end
+    end
   end
 end
