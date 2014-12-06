@@ -27,7 +27,7 @@ class VotesController < ApplicationController
     @vote = Vote.new(vote_params)
     @vote.voting_user_id = current_user.id
     if @vote.save
-      redirect_to :root, notice: '奥様へ捧げる愛のメッセージをありがとうございました。'
+      redirect_to votes_path, notice: '奥様へ捧げる愛のメッセージをありがとうございました。'
     else
       render :select, alert: '奥様への愛が足りません。やり直しです。'
     end
