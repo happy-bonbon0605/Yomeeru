@@ -43,8 +43,9 @@ bundle exec rails server
 
 ## 投票機能を利用したい場合
 
-以下でログイン後の画面遷移制御をおこなっています。  
-```rb sessions_controller.rb
+以下でログイン後の画面遷移制御を`sessions_controller.rb`おこなっています。  
+
+```rb
     if user.uid == '2714316'  
       redirect_to votes_select_path
     else
