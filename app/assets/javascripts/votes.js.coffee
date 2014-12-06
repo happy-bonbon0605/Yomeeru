@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 @count = 0
-@error_messages = ['奥さんの名前を忘れたのですか？', '邪な気持ちを捨てて己を見つめ直しなさい','あとちょっと...']
+@error_messages = ['あ、あ、う〜〜〜ん。。おしいんだけどねぇ。なに、忘れちゃったの？', 'ほ、ほんとうにその人でいいの？','あとちょっと...']
 @redirect_urls  = ['http://google.com', 'http://www.yahoo.co.jp/','http://yochiyochirb.doorkeeper.jp/']
 
 # select.html.slimに呼び出し処理を追加する after merge #13
