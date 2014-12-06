@@ -1,3 +1,41 @@
 // Place all the styles related to the votes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+	background-color: #F9F2EC;
+
+	.navbar-static-top {
+		background-color: #F9F2EC;
+	}
+
+	h1 {
+		font-size: 6em;
+	}
+
+	.top_wrapper	{
+		background-size: contain;
+		background-image: url(cute_wedding_invitation.png);
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		#login-button {
+			.zocial.github {
+				background-color: #DB9A88;
+				box-shadow: none;
+				text-shadow: none;
+				border: none;
+				background-image: none;
+				color: #fff;
+				padding: 0.5em;
+				padding-right: 1em;
+
+				&:before {
+					border-right: 0;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
