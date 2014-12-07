@@ -89,6 +89,37 @@ body {
 		font-size: 3em;
 	}
 
+	//よちよちメンバーからのメッセージ
+	#congratulaitons-block {
+		padding-left: 0;
+		.congratulation-comment {
+			list-style: none;
+			margin-bottom: 1.5em;
+			background: #DEC9C5 url(bg_hearts.png) no-repeat;
+			background-size: contain;
+
+			padding: 1em;
+			font-size: 1.5em;
+
+			span {
+				display: block;
+				text-align: right;
+			}
+
+			&:nth-child(odd) {
+				background-position: right bottom;
+				padding-right: 3em;
+			}
+			&:nth-child(even) {
+				padding-left: 3em;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	footer {
 		padding-top: 2em;
 		p {
