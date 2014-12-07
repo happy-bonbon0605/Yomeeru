@@ -4,20 +4,26 @@
 
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
 
+//settings
+$bg-color: #F9F2EC;		//背景色
+$txt-color: #6F5245;	//文字色
+
 body {
-	background-color: #F9F2EC;
+	background-color: $bg-color;
+	padding-top: 2em;
 
 	.navbar-static-top {
-		background-color: #F9F2EC;
+		background-color: $bg-color;
 	}
 
 	h1 {
 		font-family: 'Dancing Script';
 		font-size: 6em;
-		color: #6F5245;
+		color: $txt-color;
 		text-shadow: 1px 1px 3px #fff;
 	}
-
+	//ログインページ
+	//---------------------------------------
 	.top_wrapper	{
 		width: 60%;
 		margin: 0 auto;
@@ -43,6 +49,44 @@ body {
 				}
 			}
 		}
+	}
+
+	//メッセージページ
+	//---------------------------------------
+
+	//ありがとうアラート
+	.alert-success {
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		width: 60%;
+		margin-left: -30%;
+		box-shadow: 3px 3px 5px $txt-color;
+		border: 0;
+		background: #fff url(thanks-bird.png) no-repeat 95% 95%;
+		background-size: 80px auto;
+		padding: 2em;
+		color: $txt-color;
+		font-size: 2em;
+
+		.close {
+			position: absolute;
+			top: 0.5em;
+			right: 0.5em;
+			color: $txt-color;
+			font-size: 1em;
+		}
+
+	}
+
+	//奥様へのメッセージ
+	#message {
+		width: 90%;
+		margin: 0 auto 1em;
+		background: $bg-color url(bg_message_for_wife_1.png) no-repeat bottom right;
+		background-size: contain;
+		padding: 1.2em 1em 1.5em;
+		font-size: 3em;
 	}
 
 	footer {
