@@ -6,4 +6,5 @@
 ul#congratulaitons-block
   - @congratulations.shuffle.each do |cong|
     li.congratulation-comment
-      = "#{cong['comment']} from #{cong['name']}"
+      = "#{cong['comment']}"
+      span = "from #{cong['name']}"

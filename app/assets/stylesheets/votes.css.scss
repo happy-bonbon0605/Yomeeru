@@ -4,22 +4,28 @@
 
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
 
+//settings
+$bg-color: #F9F2EC;		//背景色
+$txt-color: #6F5245;	//文字色
+
 body {
-	background-color: #F9F2EC;
+	background-color: $bg-color;
+	padding-top: 2em;
 
 	.navbar-static-top {
-		background-color: #F9F2EC;
+		background-color: $bg-color;
 	}
 
 	h1 {
 		font-family: 'Dancing Script';
 		font-size: 6em;
-		color: #6F5245;
+		color: $txt-color;
 		text-shadow: 1px 1px 3px #fff;
 	}
-
+	//ログインページ
+	//---------------------------------------
 	.top_wrapper	{
-		width: 60%;
+		width: 90%;
 		margin: 0 auto;
 		background-size: contain;
 		background-image: url(cute_wedding_invitation.png);
@@ -41,6 +47,90 @@ body {
 					border-right: 0;
 					box-shadow: none;
 				}
+			}
+		}
+	}
+
+	//メッセージページ
+	//---------------------------------------
+
+	//ありがとうアラート
+	.alert-success {
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		width: 60%;
+		margin-left: -30%;
+		box-shadow: 3px 3px 5px $txt-color;
+		border: 0;
+		background: #fff url(thanks-bird.png) no-repeat 95% 95%;
+		background-size: 80px auto;
+		padding: 2em;
+		color: $txt-color;
+		font-size: 2em;
+
+		.close {
+			position: absolute;
+			top: 0.5em;
+			right: 0.5em;
+			color: $txt-color;
+			font-size: 1em;
+		}
+
+	}
+
+	//奥様へのメッセージ
+	#message {
+		width: 95%;
+		margin: 0 auto 1em;
+		background: $bg-color url(bg_message_for_wife_1.png) no-repeat bottom right;
+		background-size: contain;
+		padding: 0 0.5em 2.5em;
+		font-size: 1.2em;
+		@media (min-width: 768px) {
+			padding-bottom: 3em;
+			font-size: 1.5em;
+		}
+		@media (min-width: 1200px) {
+			padding-bottom: 3.5em;
+			font-size: 2em;
+		}
+	}
+
+	//よちよちメンバーからのメッセージ
+	#congratulaitons-block {
+		padding-left: 0;
+		.congratulation-comment {
+			list-style: none;
+			margin-bottom: 1.5em;
+			background: #DEC9C5 url(bg_hearts.png) no-repeat;
+			background-size: contain;
+
+			padding: 1em;
+			font-size: 1em;
+
+			span {
+				display: block;
+				text-align: right;
+			}
+
+			&:nth-child(odd) {
+				background-position: right bottom;
+				padding-right: 3em;
+			}
+			&:nth-child(even) {
+				padding-left: 3em;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@media (min-width: 768px) {
+				font-size: 1.2em;
+			}
+			@media (min-width: 1200px) {
+				font-size: 1.5em;
 			}
 		}
 	}
