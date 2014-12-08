@@ -25,7 +25,7 @@ body {
 	//ログインページ
 	//---------------------------------------
 	.top_wrapper	{
-		width: 60%;
+		width: 90%;
 		margin: 0 auto;
 		background-size: contain;
 		background-image: url(cute_wedding_invitation.png);
@@ -81,12 +81,20 @@ body {
 
 	//奥様へのメッセージ
 	#message {
-		width: 90%;
+		width: 95%;
 		margin: 0 auto 1em;
 		background: $bg-color url(bg_message_for_wife_1.png) no-repeat bottom right;
 		background-size: contain;
-		padding: 1.2em 1em 1.5em;
-		font-size: 3em;
+		padding: 0 0.5em 2.5em;
+		font-size: 1.2em;
+		@media (min-width: 768px) {
+			padding-bottom: 3em;
+			font-size: 1.5em;
+		}
+		@media (min-width: 1200px) {
+			padding-bottom: 3.5em;
+			font-size: 2em;
+		}
 	}
 
 	//よちよちメンバーからのメッセージ
@@ -99,7 +107,7 @@ body {
 			background-size: contain;
 
 			padding: 1em;
-			font-size: 1.5em;
+			font-size: 1em;
 
 			span {
 				display: block;
@@ -116,6 +124,13 @@ body {
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+
+			@media (min-width: 768px) {
+				font-size: 1.2em;
+			}
+			@media (min-width: 1200px) {
+				font-size: 1.5em;
 			}
 		}
 	}
