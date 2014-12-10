@@ -29,7 +29,8 @@ class VotesController < ApplicationController
     if @vote.save
       redirect_to votes_path, notice: '奥様へ捧げる愛のメッセージをありがとうございました。'
     else
-      render :select, alert: '奥様への愛が足りません。やり直しです。'
+      flash.now[:alert] = '奥様への愛が足りません。やり直しです。'
+      render :message
     end
   end
 

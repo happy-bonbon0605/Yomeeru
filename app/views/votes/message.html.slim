@@ -1,10 +1,11 @@
 - model_class = Vote
 .page-header
   h1=t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: model_class.model_name.human.titleize
-
+  p
+    = '奥様へ愛のこもったメッセージを送りましょう。'
   = form_for @vote, url: {action: 'vote'} do |f|
     p
-      = f.text_area :message
+      = f.text_area :message, size: '40x10'
       = f.hidden_field :voted_user_id, value: @vote.voted_user_id
 
     = f.submit 'Vote'
