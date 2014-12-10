@@ -1,5 +1,5 @@
 defaults: &defaults
-  bonbon_uid: 2714316
+  bonbon_uid: '2714316'
 
 development:
   <<: *defaults
