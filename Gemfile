@@ -14,6 +14,7 @@ gem 'active_decorator'
 gem 'slim-rails'
 gem 'omniauth-github'
 gem 'zocial-rails'
+gem 'settingslogic'
 
 # User bootswatch
 gem 'twitter-bootstrap-rails'
