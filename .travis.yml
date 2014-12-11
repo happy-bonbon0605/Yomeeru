@@ -11,6 +11,7 @@ deploy:
   run:
   - "rake db:setup"
   - "rake assets:precompile"
+  - "cp config/application.yml.sample config/application.yml"
   app:
     master: yomeeru
   on:
