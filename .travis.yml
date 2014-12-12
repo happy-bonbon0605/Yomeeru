@@ -9,7 +9,7 @@ deploy:
   api_key:
     secure: GfQVYbEb8OR9F4rwhNIHYfo9u7HQ8OL88yNKE2oHNg5O3sP6lIajhVIVbzk3+/O7SxgJB+VQDRyngEF8JP/tyi72oomcwi76ukgEpr1pwIZIfn0M0VTTH76zAL8dW6X06riyP7WAaJwUmkIdvaA4pNGLlGJgufNoJO0BeZIZR9E=
   run:
-    - "rake db:setup"
+    - "rake db:migrate"
     - "rake assets:precompile"
     - "cp config/application.yml.sample config/application.yml"
   app:
