@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.1.4
 before_script:
-  - "cp ./config/application.yml.sample ./config/application.yml"
+  - cp config/application.yml.sample config/application.yml
 notifications:
   webhooks:
     - https://idobata.io/hook/travis_ci/5a7d2ea4-d773-4c80-a625-ecf3f3dbb416
