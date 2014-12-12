@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#callback'
   get '/signout' => 'sessions#destroy'
-  # TODO: remove it
+
   get 'votes' => 'votes#index'
   get 'votes/select' => 'votes#select'
   post 'votes/message' => 'votes#message'
