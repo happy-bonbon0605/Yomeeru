@@ -4,6 +4,7 @@ rvm:
 before_script:
   - cp config/application.yml.sample config/application.yml
 after_script:
+  - pwd
   - ls -la config/application.yml
 notifications:
   webhooks:
