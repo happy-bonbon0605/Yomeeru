@@ -1,0 +1,11 @@
+defaults: &defaults
+  bonbon_uid: '2714316'
+
+development:
+  bonbon_uid: '1495423'
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
