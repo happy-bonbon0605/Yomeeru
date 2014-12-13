@@ -1,11 +1,6 @@
 language: ruby
 rvm:
   - 2.1.4
-before_script:
-  - cp config/application.yml.sample config/application.yml
-after_script:
-  - pwd
-  - ls -la config/application.yml
 notifications:
   webhooks:
     - https://idobata.io/hook/travis_ci/5a7d2ea4-d773-4c80-a625-ecf3f3dbb416
@@ -13,7 +8,6 @@ deploy:
   provider: heroku
   api_key:
     secure: GfQVYbEb8OR9F4rwhNIHYfo9u7HQ8OL88yNKE2oHNg5O3sP6lIajhVIVbzk3+/O7SxgJB+VQDRyngEF8JP/tyi72oomcwi76ukgEpr1pwIZIfn0M0VTTH76zAL8dW6X06riyP7WAaJwUmkIdvaA4pNGLlGJgufNoJO0BeZIZR9E=
-  strategy: git
   run:
     - "rake db:migrate"
     - "rake assets:precompile"
