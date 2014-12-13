@@ -1,8 +1,8 @@
 defaults: &defaults
-  bonbon_uid: ENV['GITHUB_UID']
+  bonbon_uid: '2714316'
 
 development:
-  <<: *defaults
+  bonbon_uid: '1495423'
 
 test:
   <<: *defaults

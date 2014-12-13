@@ -37,8 +37,8 @@ bundle exec rails runner lib/batch/insert_to_members_from_github_contributors.rb
 # ex) bash,zsh
 export GITHUB_KEY="XXXXXXXXX"         # Yomeeru用のClient IDを設定
 export GITHUB_SECRET="XXXXXXXXXXXXX" # Yomeeru用のClient Secretを設定
-# 暫定対応で、投票可能な人のUIDを設定してください
-export GITHUB_UID="XXXXXXXXX"
+# Stagingで対応する場合、RAILS_ENVにdevelopmentを設定する
+export RAILS_ENV=development
 
 # 必要に応じて、Settingslogic で設定している uid を自分のものに変える（次項参照）
 
