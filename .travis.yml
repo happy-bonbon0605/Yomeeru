@@ -19,5 +19,6 @@ deploy:
     - "rake assets:precompile"
   app:
     develop: staging-yomeeru
+    master: yomeeru
   on:
     repo: happy-bonbon0605/Yomeeru
